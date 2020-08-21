@@ -6,6 +6,7 @@ class SearchBar extends React.Component{
 
     //     console.log(event.target.value);
     // }
+    state={term:''};
 
    
 
@@ -17,7 +18,9 @@ class SearchBar extends React.Component{
                <div className="field">
                      <label>Image Search</label>
                    
-                     <input type="text"  onChange={(e)=>{console.log(e.target.value)}} />
+                     <input type="text" 
+                            value={this.state.term}
+                            onChange={(e)=>this.setState({term:e.target.value.toUpperCase()})} />
                </div>
            </form>
         </div>
