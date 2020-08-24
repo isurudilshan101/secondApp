@@ -7,10 +7,13 @@ class App extends React.Component{
     onSearchSubmit(term){
        
         axios.get('https://api.unsplash.com/',{
-
+        params:{query:term},
         headers:{
             Authorization: 'Client-ID D4OO0GGuie8h-MYimpIQs2dZERNcR3D2ezGBbrs-VhI'
         }
+
+        }).then(response=>{
+            console.log(response.data.results);
 
         });
     }
